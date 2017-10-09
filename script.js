@@ -34,7 +34,7 @@ $(function(){
 		if(card1 === card2 && slotPicked[0] !== slotPicked[1]){
 			console.log("nice!");
 			playSound();
-			cardsPicked = [];
+
 			$("#slot" + slotPicked[0]).attr("id", "null");
 			$("#slot" + slotPicked[1]).attr("id", "null");
 		} else {
@@ -43,27 +43,29 @@ $(function(){
 		}
 	}
 
-	var resetCards = function(classNumber){
+	var resetCards = function(classNumber, slotNumber){
 		console.log("Resetting");
-		console.log("cardsPicked: " + cardsPicked[0] + ", slots: " + slotPicked[0] + " " + slotPicked[1]);
-		if(cardsPicked[0] === classNumber){ 
+		// console.log("cardsPicked: " + cardsPicked[0] + ", slots: " + slotPicked[0] + " " + slotPicked[1]);
+		if(cardsPicked[0] === classNumber && slotPicked[0] === slotNumber){ 
 			$("#slot"+ slotPicked[1]).attr("src", "images/cardBack.jpg");
-		} else if(cardsPicked[1] === classNumber){
+		} else if(cardsPicked[1] === classNumber && slotPicked[0] === slotNumber ){
 			$("#slot"+ slotPicked[0]).attr("src", "images/cardBack.jpg");
 		} else {
 			$("#slot"+ slotPicked[0]).attr("src", "images/cardBack.jpg");
 			$("#slot"+ slotPicked[1]).attr("src", "images/cardBack.jpg");
 
 		}
-		
+
 		cardsPicked.length = 0;
 		slotPicked.length = 0;
+		// console.log("AFTER cardsPicked: " + cardsPicked[0] + ", slots: " + slotPicked[0] + " " + slotPicked[1]);
+
 
 	}
 
 	var addPickedCard = function(classNumber, slotNumber){
 		if(cardsPicked.length === 0 || cardsPicked.length > 1){
-			resetCards(classNumber);
+			resetCards(classNumber, slotNumber);
 			cardsPicked[0] = classNumber;
 			
 			slotPicked[0] = slotNumber;
