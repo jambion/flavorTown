@@ -83,6 +83,10 @@ $(function(){
 		sound.play();
 	}
 
+	var fadeCard = function(thisSlot, classNumber){
+		thisSlot.fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+	}
+
 	virtualBoard = shuffle(allCards);
 	console.log(virtualBoard);
 	fillHTMLBoard(virtualBoard);
@@ -92,8 +96,9 @@ $(function(){
 
 
 	$("#slot0").click(function(){
-		var classNumber = $(this).attr("class")
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		var classNumber = $(this).attr("class");
+		fadeCard($(this), classNumber);
+		// $(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
 		addPickedCard(classNumber, 0);
 	});
 
@@ -101,37 +106,37 @@ $(function(){
 
 	$("#slot1").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 1);
 	});
 
 	$("#slot2").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 2);
 	});
 
 	$("#slot3").click(function(){
 		var classNumber = $(this).attr("class")
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 3);
 	});
 
 	$("#slot4").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 4);
 	});
 
 	$("#slot5").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 5);
 	});
 
 	$("#slot6").click(function(){
 		var classNumber = $(this).attr("class")
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 6);
 	});
 
@@ -139,19 +144,19 @@ $(function(){
 
 	$("#slot7").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 7);
 	});
 
 	$("#slot8").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 8);
 	});
 
 	$("#slot9").click(function(){
 		var classNumber = $(this).attr("class")
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 9);
 	});
 
@@ -159,13 +164,13 @@ $(function(){
 
 	$("#slot10").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 10);
 	});
 
 	$("#slot11").click(function(){
 		var classNumber = $(this).attr("class");
-		$(this).fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
+		fadeCard($(this), classNumber);
 		addPickedCard(classNumber, 11);
 	});
 
