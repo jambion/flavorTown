@@ -1,3 +1,10 @@
+body {
+	font-family: 'Modak', cursive;
+	font-size: 50px;
+	color: #C5BD99;
+	background: #424242;
+}
+
 #content {
 	display: flex;
 	flex-direction: column;
@@ -15,6 +22,7 @@
 }
 
 .row img {
+	border-radius: 7px;
 	width: 150px;
 	height: 210px;
 }

@@ -48,7 +48,7 @@ $(function(){
 		// console.log("cardsPicked: " + cardsPicked[0] + ", slots: " + slotPicked[0] + " " + slotPicked[1]);
 		if(cardsPicked[0] === classNumber && slotPicked[0] === slotNumber){ 
 			$("#slot"+ slotPicked[1]).attr("src", "images/cardBack.jpg");
-		} else if(cardsPicked[1] === classNumber && slotPicked[0] === slotNumber ){
+		} else if(cardsPicked[1] === classNumber && slotPicked[1] === slotNumber ){
 			$("#slot"+ slotPicked[0]).attr("src", "images/cardBack.jpg");
 		} else {
 			$("#slot"+ slotPicked[0]).attr("src", "images/cardBack.jpg");
@@ -64,7 +64,7 @@ $(function(){
 	}
 
 	var addPickedCard = function(classNumber, slotNumber){
-		if(cardsPicked.length === 0 || cardsPicked.length > 1){
+		if(cardsPicked.length === 0 || cardsPicked.length > 1){ // reset the cards if there are no cards or there are two cards
 			resetCards(classNumber, slotNumber);
 			cardsPicked[0] = classNumber;
 			
@@ -87,13 +87,22 @@ $(function(){
 		thisSlot.fadeTo(200, 0).attr("src", "images/" + classNumber + ".jpg").fadeTo(200, 1);
 	}
 
+	var hoverCard = function(){
+
+	}
+
 	virtualBoard = shuffle(allCards);
 	console.log(virtualBoard);
 	fillHTMLBoard(virtualBoard);
 
 
+	$(".row img").mouseenter(function(){
+		$(this).fadeTo(100, 0.5);
+	});
 
-
+	$(".row img").mouseleave(function(){
+		$(this).fadeTo(100, 1);
+	});
 
 	$("#slot0").click(function(){
 		var classNumber = $(this).attr("class");
